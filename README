@@ -1,0 +1,23 @@
+Mass Dummy File Creator
+by Expack3
+------------------------
+
+What is it?
+
+The Mass Dummy File Creator is a utility for replacing files with empty "dummy" files. The utility can optionally back up any replaced files, and can also restore any files which it backed up.
+
+Requirements:
+
+Windows 8 or higher (program should work with Windows OSes as old as Windows XP)
+.NET Framework 4.0 (download from http://www.microsoft.com/en-us/download/details.aspx?id=17851 )
+
+Operation Instructions:
+
+First, select a folder using the "Select Folder" button. Successful selection will cause a message to appear next to the button.
+Second, choose whether you want to create dummy files or restore backups created by this utility.
+If you chose to create dummy files, you can do the following:
+
+Third, choose whether you want to create backups of the files to be replaced.
+Fourth, enter the extension of the files to be replaced. Don't include a period - this will be included for you automatically.
+
+Finally, click the "Go!" button to commence file replacement/restoration.
