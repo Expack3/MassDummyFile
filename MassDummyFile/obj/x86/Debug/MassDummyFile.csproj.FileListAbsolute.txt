@@ -1,0 +1,7 @@
+d:\expack\documents\visual studio 2010\Projects\MassDummyFile\MassDummyFile\bin\Debug\MassDummyFile.exe
+d:\expack\documents\visual studio 2010\Projects\MassDummyFile\MassDummyFile\bin\Debug\MassDummyFile.pdb
+d:\expack\documents\visual studio 2010\Projects\MassDummyFile\MassDummyFile\obj\x86\Debug\MassDummyFile.Form1.resources
+d:\expack\documents\visual studio 2010\Projects\MassDummyFile\MassDummyFile\obj\x86\Debug\MassDummyFile.Properties.Resources.resources
+d:\expack\documents\visual studio 2010\Projects\MassDummyFile\MassDummyFile\obj\x86\Debug\MassDummyFile.csproj.GenerateResource.Cache
+d:\expack\documents\visual studio 2010\Projects\MassDummyFile\MassDummyFile\obj\x86\Debug\MassDummyFile.exe
+d:\expack\documents\visual studio 2010\Projects\MassDummyFile\MassDummyFile\obj\x86\Debug\MassDummyFile.pdb
