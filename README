@@ -24,3 +24,14 @@ Third, choose whether you want to create backups of the files to be replaced.
 Fourth, enter the extension of the files to be replaced. Don't include a period - this will be included for you automatically.
 
 Finally, click the "Go!" button to commence file replacement/restoration.
+
+Changelog:
+
+1.0 (Initial Version)
+
+1.1
+*Moved file dummying operation to its own thread.
+*Changed fileArray from array to list.
+*Created ArrayReduction class, a threaded process which allows for optimization of fileArray's size by returning an array exclusively containing the target file extension. This only runs when the file extension changes or the user switches between modes.
+*Changed DummyOps operations to auto-update fileArray based on whether files are being added or removed.
+*Added progress text field. It's hidden until dummy files are created, then hides when the operation is completed; however, it changes so fast that it might as well be invisible....
