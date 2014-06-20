@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayReduction.cs" />
     <Compile Include="DummyOps.cs" />
     <Compile Include="ExtValidator.cs" />
     <Compile Include="Form1.cs">

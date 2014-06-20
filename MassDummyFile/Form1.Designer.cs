@@ -37,9 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CreateBakCheck = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.ExtTextbox = new System.Windows.Forms.TextBox();
             this.StartButton = new System.Windows.Forms.Button();
             this.DirectorySelection = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.ExtTextbox = new System.Windows.Forms.TextBox();
+            this.ProgressText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -123,14 +126,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "4. Enter the extension of the files you wish to dummy out.";
             // 
-            // ExtTextbox
-            // 
-            this.ExtTextbox.Location = new System.Drawing.Point(13, 230);
-            this.ExtTextbox.Name = "ExtTextbox";
-            this.ExtTextbox.Size = new System.Drawing.Size(265, 20);
-            this.ExtTextbox.TabIndex = 4;
-            this.ExtTextbox.TextChanged += new System.EventHandler(this.ExtTextbox_TextChanged);
-            // 
             // StartButton
             // 
             this.StartButton.Enabled = false;
@@ -152,11 +147,47 @@
             this.DirectorySelection.Text = "Directory Selected!";
             this.DirectorySelection.Visible = false;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.WorkerReportsProgress = true;
+            this.backgroundWorker2.WorkerSupportsCancellation = true;
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
+            // ExtTextbox
+            // 
+            this.ExtTextbox.Enabled = false;
+            this.ExtTextbox.Location = new System.Drawing.Point(13, 230);
+            this.ExtTextbox.Name = "ExtTextbox";
+            this.ExtTextbox.Size = new System.Drawing.Size(265, 20);
+            this.ExtTextbox.TabIndex = 4;
+            this.ExtTextbox.TextChanged += new System.EventHandler(this.ExtTextbox_TextChanged);
+            // 
+            // ProgressText
+            // 
+            this.ProgressText.AutoSize = true;
+            this.ProgressText.Location = new System.Drawing.Point(13, 281);
+            this.ProgressText.Name = "ProgressText";
+            this.ProgressText.Size = new System.Drawing.Size(35, 13);
+            this.ProgressText.TabIndex = 7;
+            this.ProgressText.Text = "label5";
+            this.ProgressText.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 352);
+            this.Controls.Add(this.ProgressText);
             this.Controls.Add(this.DirectorySelection);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.ExtTextbox);
@@ -171,6 +202,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Mass Dummy File Creator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,9 +219,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox CreateBakCheck;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ExtTextbox;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label DirectorySelection;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.TextBox ExtTextbox;
+        private System.Windows.Forms.Label ProgressText;
     }
 }
 
