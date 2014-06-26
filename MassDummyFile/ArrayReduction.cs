@@ -7,6 +7,9 @@ using System.IO;
 
 namespace MassDummyFile
 {
+    /// <summary>
+    /// A class containing functions designed to optimize a list of files based on the globally-stored file extension
+    /// </summary>
     public class ArrayReduction
     {
 
@@ -21,6 +24,11 @@ namespace MassDummyFile
             useBak = Bak;
         }
 
+        /// <summary>
+        /// Given a BackgroundWorker thread and a DoWorkEventArgs class, find all the files in the globally-stored directory location which match the globally-stored file extension and return the result. 
+        /// </summary>
+        /// <param name="worker"></param>
+        /// <param name="e"></param>
         public void reduce(BackgroundWorker worker, DoWorkEventArgs e)
         {
             string[] temp = Directory.GetFiles(GlobalVars.directory);

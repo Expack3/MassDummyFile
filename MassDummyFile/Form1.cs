@@ -84,14 +84,20 @@ namespace MassDummyFile
         {
             if (CreateDummyRadio.Checked)
             {
-                if (GlobalVars.directory != null && GlobalVars.fileArray.Count > 0 && GlobalVars.extValid == true)
+                if (GlobalVars.directory != null && GlobalVars.fileArray.Count > 0 && GlobalVars.extValid == true && backgroundWorker2.IsBusy != true && backgroundWorker1.IsBusy != true)
                 {
                     StartButton.Enabled = true;
                 }
+                else
+                    StartButton.Enabled = false;
             }
-            else if (GlobalVars.directory != null && GlobalVars.restoreBak)
+            else if (GlobalVars.directory != null && GlobalVars.restoreBak && backgroundWorker2.IsBusy != true && backgroundWorker1.IsBusy != true)
             {
                 StartButton.Enabled = true;
+            }
+            else
+            {
+                StartButton.Enabled = false;
             }
         }
 
@@ -154,6 +160,10 @@ namespace MassDummyFile
         {
             if (e.Error != null)
                 MessageBox.Show("Error: " + e.Error.Message);
+            else
+            {
+                canDummy();
+            }
             ProgressText.Visible = false;
         }
 
@@ -169,12 +179,13 @@ namespace MassDummyFile
             else
             {
                 GlobalVars.reloadDir = false;
+                canDummy();
             }
         }
 
         private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            GlobalVars.fileArray = (List<string>)e.UserState;
+            GlobalVars.fileArray = (List<string>)e.UserState; //updates the file array with the new, optimized file array
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
