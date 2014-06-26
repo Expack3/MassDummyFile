@@ -35,3 +35,7 @@ Changelog:
 *Created ArrayReduction class, a threaded process which allows for optimization of fileArray's size by returning an array exclusively containing the target file extension. This only runs when the file extension changes or the user switches between modes.
 *Changed DummyOps operations to auto-update fileArray based on whether files are being added or removed.
 *Added progress text field. It's hidden until dummy files are created, then hides when the operation is completed; however, it changes so fast that it might as well be invisible....
+
+1.11
+*Added thread checks to ensure dummy creation cannot be done if any threads are still running.
+*Added additional in-line documentation
